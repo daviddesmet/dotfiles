@@ -38,14 +38,18 @@ then
     fonts-powerline \
     zsh
 
+    zsh
     git clone --recursive https://github.com/sorin-ionescu/prezto.git ~/.zprezto
     setopt EXTENDED_GLOB
-    ln -s ~/.zprezto/runcoms/zlogin ~/.zlogin
-    ln -s ~/.zprezto/runcoms/zlogout ~/.zlogout
-    ln -s ~/.zprezto/runcoms/zpreztorc ~/.zpreztorc
-    ln -s ~/.zprezto/runcoms/zprofile ~/.zprofile
-    ln -s ~/.zprezto/runcoms/zshenv ~/.zshenv
-    ln -s ~/.zprezto/runcoms/zlogin ~/.zlogin
+    for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
+        ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+    done
+    # ln -s ~/.zprezto/runcoms/zlogin ~/.zlogin
+    # ln -s ~/.zprezto/runcoms/zlogout ~/.zlogout
+    # ln -s ~/.zprezto/runcoms/zpreztorc ~/.zpreztorc
+    # ln -s ~/.zprezto/runcoms/zprofile ~/.zprofile
+    # ln -s ~/.zprezto/runcoms/zshenv ~/.zshenv
+    # ln -s ~/.zprezto/runcoms/zlogin ~/.zlogin
     
     cp -f ~/dotfiles/.dircolors ~/.dircolors
     cp -f ~/dotfiles/.p10k.zsh ~/.p10k.zsh

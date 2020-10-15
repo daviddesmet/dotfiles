@@ -50,7 +50,6 @@ then
     ln -s ~/.zprezto/runcoms/zpreztorc ~/.zpreztorc
     ln -s ~/.zprezto/runcoms/zprofile ~/.zprofile
     ln -s ~/.zprezto/runcoms/zshenv ~/.zshenv
-    ln -s ~/.zprezto/runcoms/zlogin ~/.zlogin
     
     cp -f ~/dotfiles/.dircolors ~/.dircolors
     cp -f ~/dotfiles/.p10k.zsh ~/.p10k.zsh
